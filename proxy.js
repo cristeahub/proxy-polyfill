@@ -16,6 +16,7 @@
 
 'use strict';
 
+const scope = {};
 
 (function(scope) {
   if (scope['Proxy']) {
@@ -169,4 +170,6 @@
 
   scope.Proxy['revocable'] = scope.Proxy.revocable;
   scope['Proxy'] = scope.Proxy;
-})(typeof process !== 'undefined' && /\[object (process\b|object\b)\]/i.test({}.toString.call(process)) ? global : self);
+})(scope);
+
+export default scope;
